@@ -1,0 +1,44 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!--CDN Vue-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!--CDN axios-->
+    <link rel="stylesheet" href="meteo.css">
+</head>
+<body>
+    <div id="title">
+        <h1>Météo</h1>
+    </div>
+    <div id="app">
+        <input type="text" v-model="ville" id="text" placeholder="Ville">
+        <button @click="updatePost" id="button">Recherche</button >
+        <h2 v-bind="meteos" id="weather">{{ meteos }}</h2>
+    </div>
+
+
+
+    <script>
+        var app = new Vue({
+                    el: '#app',
+                    data:{
+                        meteos: '',
+                        ville: '',
+                    },
+                    methods: {
+                        updatePost(ville){
+                            ville = this.ville
+                            axios.get('https://www.prevision-meteo.ch/services/json/' + ville).then(response => this.meteos = response.data.current_condition.condition) //this.meteos = response.data.current_condition / console.log(response)
+                            .catch(erreur => this.posts = [{title:"erreur de chargement"}]);
+                        },
+                    }
+        })
+
+
+        //"https://www.prevision-meteo.ch/services/json/paris");
+
+    </script>
+</body>
+</html>
