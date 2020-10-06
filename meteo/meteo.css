@@ -1,5 +1,5 @@
 body{
-    background-color: #008090;
+    background-image: url(./photos/fond.jpg);
     color: white;
 }
 
@@ -84,3 +84,28 @@ button {
     opacity: 1;
     right: 0;
     }
+
+
+
+
+
+
+#pluie{
+    background-image: url(./photos/pluie.jpg);  
+}
+
+#orage{
+    background-image: url(./photos/orage.jpg);
+}
+
+#soleil{
+    background-image: url(./photos/soleil.jpg);
+}
+
+#nuagePluie{
+    background-image: url(./photos/nuagePluie.jpg);
+}
+
+#nuageSoleil{
+    background-image: url(./photos/nuageSoleil.jpg);
+}
