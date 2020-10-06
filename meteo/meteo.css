@@ -42,33 +42,6 @@ body{
     width: 250px;
     }
     
-    input:focus::-webkit-input-placeholder {
-    color: transparent;
-    }
-    
-    input:focus:-moz-placeholder {
-    color: transparent;
-    }
-    
-    input:focus::-moz-placeholder {
-    color: transparent;
-    }
-    
-    #text input {
-    outline: none;
-    }
-    
-    #text input[type= "text"] {
-    background: url(http://2.bp.blogspot.com/-xpzxYc77ack/VDpdOE5tzMI/AAAAAAAAAeQ/TyXhIfEIUy4/s1600/search-dark.png) no-repeat 10px 6px #fff;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #fff;
-    font: bold 12px Arial,Helvetica,Sans-serif;
-    color: #bebebe;
-    width: 55%;
-    padding: 8px 15px 8px 30px;
-    }
-
 
 
 
