@@ -1,6 +1,11 @@
 body{
     background-image: url(./photos/fond.jpg);
     color: white;
+    background-size: cover;  
+}
+
+#app{
+    padding-top: 25px;
 }
 
 #title{
@@ -11,7 +16,6 @@ body{
     height: 70px;
     margin-left: 200px;
     margin-right: 200px;
-    margin-top: 50px;
     padding-top: 8px;
 }
 
@@ -29,6 +33,7 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 150px;
+    padding-bottom: 200px;
 }
 
 
@@ -92,21 +97,26 @@ button {
 
 
 .pluie{
-    background-image: url(./photos/pluie.jpg);  
+    background-image: url(./photos/pluie.jpg);
+    background-size: cover;  
 }
 
 .orage{
     background-image: url(./photos/orage.jpg);
+    background-size: cover;  
 }
 
 .soleil{
     background-image: url(./photos/soleil.jpg);
+    background-size: cover;  
 }
 
 .nuagePluie{
     background-image: url(./photos/nuagePluie.jpg);
+    background-size: cover;  
 }
 
 .nuageSoleil{
     background-image: url(./photos/nuageSoleil.jpg);
+    background-size: cover;  
 }
