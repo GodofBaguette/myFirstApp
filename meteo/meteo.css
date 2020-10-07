@@ -90,22 +90,23 @@ button {
 
 
 
-#pluie{
+
+.pluie{
     background-image: url(./photos/pluie.jpg);  
 }
 
-#orage{
+.orage{
     background-image: url(./photos/orage.jpg);
 }
 
-#soleil{
+.soleil{
     background-image: url(./photos/soleil.jpg);
 }
 
-#nuagePluie{
+.nuagePluie{
     background-image: url(./photos/nuagePluie.jpg);
 }
 
-#nuageSoleil{
+.nuageSoleil{
     background-image: url(./photos/nuageSoleil.jpg);
 }

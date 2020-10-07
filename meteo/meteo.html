@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="meteo.css">
 </head>
 <body>
-    <div id="title">
-        <h1>Météo de votre ville grâce a Djitou isport !</h1>
-    </div>
-    <div id="app">
+    <div id="app" v-bind:class="{'nuageSoleil' : (meteos === 'Eclaircies'), 'nuagePluie' : (meteos === 'Fortement nuageux')}">
+        <div id="title">
+            <h1>Météo de votre ville grâce a Djitou isport !</h1>
+        </div>
         <input type="text" v-model="ville" id="text" placeholder="Ville">
         <button @click="updatePost" id="button">Recherche</button >
         <h2 v-bind="meteos" id="weather">{{ meteos }}</h2>
@@ -35,6 +35,22 @@
                         },
                     }
         })
+
+
+
+
+
+        //Fortement nuageux
+
+        //Faiblement nuageux
+        //Eclaircies
+
+        //Ensoleillé
+        //ciel voilé
+
+        //Averse de pluie faible
+        //Pluie faible
+
 
 
         //"https://www.prevision-meteo.ch/services/json/paris");
