@@ -3,24 +3,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!--CDN Vue-->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!--CDN axios-->
     <link rel="stylesheet" href="meteo.css">
 </head>
 <body>
+    <!--Changement du background en fonction du temps en rapport à la variable météo -->
     <div id="app" v-bind:class="{'nuageSoleil' : (meteos === 'Eclaircies'), 'nuagePluie' : (meteos === 'Fortement nuageux'), 'pluie' : (meteo === 'Pluie forte'), 'soleil' : (meteo === 'Ensoleillé'), 'orage' : (meteos === 'Orage modéré')}">
         <div id="title">
             <h1>Météo de votre ville grâce a Djitou isport !</h1>
         </div>
         <input type="text" v-model="ville" id="text" placeholder="Ville">
-        <button @click="updatePost" id="button">Recherche</button >
+        <button @click="meteoVille" id="button">Recherche</button >
         <h2 v-bind="meteos" id="weather">{{ meteos }}</h2>
     </div>
 
 
 
     <script>
+
+        //Instance pour l'appelle API météo
         var app = new Vue({
                     el: '#app',
                     data:{
@@ -28,7 +30,7 @@
                         ville: '',
                     },
                     methods: {
-                        updatePost(ville){
+                        meteoVille(ville){ 
                             ville = this.ville
                             axios.get('https://www.prevision-meteo.ch/services/json/' + ville).then(response => this.meteos = response.data.current_condition.condition) //this.meteos = response.data.current_condition / console.log(response)
                             .catch(erreur => this.posts = [{title:"erreur de chargement"}]);
@@ -37,23 +39,6 @@
         })
 
 
-
-
-
-        //Fortement nuageux
-
-        //Faiblement nuageux
-        //Eclaircies
-
-        //Ensoleillé
-        //ciel voilé
-
-        //Averse de pluie faible
-        //Pluie faible
-
-
-
-        //"https://www.prevision-meteo.ch/services/json/paris");
 
     </script>
 </body>
